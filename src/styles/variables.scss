@@ -24,7 +24,7 @@ $hover-color: #FFBFCB;
 @each $day, $index in $week-days {
   .calendar--start-day-#{$day} {
     .calendar__day:first-child {
-      margin-left: ($index * ($size + $gap))
+      margin-left: #{($index * ($size + $gap))};
     }
   }
 }

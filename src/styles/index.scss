@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
-  width: calc(($calendar-size + $border-width) * $columns + $gap * ($columns - 1) + 2 * $padding)
+  width: calc(($calendar-size + $border-width) * $columns + $gap * ($columns - 1) + 2 * $padding);
 }
 
 .calendar__day {
