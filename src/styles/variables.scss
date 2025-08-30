@@ -4,7 +4,6 @@ $day-size: 700px;
 $gap: 1px;
 $padding: 10px;
 $week-days: mon, tue, wed, thu, fri, sat, sun;
-$last: $h + 1;
 $hover-color: #ffbfcb;
 
 @mixin square($size, $color) {
@@ -29,6 +28,7 @@ $hover-color: #ffbfcb;
 }
 
 @for $h from 28 through 31 {
+  $last: $h + 1;
   .calendar--days-#{$h} {
     .calendar__day:nth-child(n + #{$last}) {
       display: none;
