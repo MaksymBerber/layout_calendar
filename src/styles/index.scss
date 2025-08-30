@@ -2,23 +2,29 @@
 
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .calendar {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
-  width: $day-size;
-  gap: $gap;
-  padding: $padding;
+  width: calc(($calendar-size + $border-width) * $columns + $gap * ($columns - 1) + 2 * $padding)
+}
+
+.calendar__day {
+  @include square($size, $color);
 }
 
 .calendar__day:hover {
   cursor: pointer;
-  color: $hover-color;
+  background-color: $hover-color;
   transform: translate(0, -20px);
   transition:
-    color 0.5s,
+    background-color 0.5s,
     transform 0.5s;
 }
 

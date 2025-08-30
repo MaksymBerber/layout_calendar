@@ -1,10 +1,12 @@
 $size: 100px;
 $color: #eee;
-$day-size: 700px;
+$calendar-size: 100px;
 $gap: 1px;
 $padding: 10px;
-$week-days: mon, tue, wed, thu, fri, sat, sun;
-$hover-color: #ffbfcb;
+$columns: 7;
+$border-width: 1px;
+$week-days: (mon: 1, tue: 2, wed: 3, thu: 4, fri: 5, sat: 6, sun: 7);
+$hover-color: #FFBFCB;
 
 @mixin square($size, $color) {
   width: $size;
@@ -19,17 +21,17 @@ $hover-color: #ffbfcb;
   }
 }
 
-@each $day in $week-days {
+@each $day, $index in $week-days {
   .calendar--start-day-#{$day} {
     .calendar__day:first-child {
-      margin-left: 500px;
+      margin-left: ($index * ($size + $gap))
     }
   }
 }
 
 @for $h from 28 through 31 {
   $last: $h + 1;
-  .calendar--days-#{$h} {
+  .calendar--month-length-#{$h} {
     .calendar__day:nth-child(n + #{$last}) {
       display: none;
     }
