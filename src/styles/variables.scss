@@ -1,0 +1,37 @@
+$size: 100px;
+$color: #eee;
+$day-size: 700px;
+$gap: 1px;
+$padding: 10px;
+$week-days: mon, tue, wed, thu, fri, sat, sun;
+$last: $h + 1;
+$hover-color: #ffbfcb;
+
+@mixin square($size, $color) {
+  width: $size;
+  height: $size;
+  background-color: $color;
+  border: 1px solid black;
+}
+
+@for $i from 1 through 31 {
+  .calendar__day:nth-child(#{$i})::before {
+    content: '#{$i}';
+  }
+}
+
+@each $day in $week-days {
+  .calendar--start-day-#{$day} {
+    .calendar__day:first-child {
+      margin-left: 500px;
+    }
+  }
+}
+
+@for $h from 28 through 31 {
+  .calendar--days-#{$h} {
+    .calendar__day:nth-child(n + #{$last}) {
+      display: none;
+    }
+  }
+}

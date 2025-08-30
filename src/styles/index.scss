@@ -1,3 +1,31 @@
+@import './variables';
+
 body {
   margin: 0;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: $day-size;
+  gap: $gap;
+  padding: $padding;
+}
+
+.calendar__day:hover {
+  cursor: pointer;
+  color: $hover-color;
+  transform: translate(0, -20px);
+  transition:
+    color 0.5s,
+    transform 0.5s;
+}
+
+.calendar__day::before {
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
