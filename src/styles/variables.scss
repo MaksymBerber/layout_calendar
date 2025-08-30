@@ -1,12 +1,20 @@
 $size: 100px;
 $color: #eee;
-$calendar-size: 100px;
+$calendar: 100px;
 $gap: 1px;
 $padding: 10px;
 $columns: 7;
-$border-width: 1px;
-$week-days: (mon: 1, tue: 2, wed: 3, thu: 4, fri: 5, sat: 6, sun: 7);
-$hover-color: #FFBFCB;
+$border: 1px;
+$week-days: (
+  mon: 1,
+  tue: 2,
+  wed: 3,
+  thu: 4,
+  fri: 5,
+  sat: 6,
+  sun: 7,
+);
+$hover-color: #ffbfcb;
 
 @mixin square($size, $color) {
   width: $size;
