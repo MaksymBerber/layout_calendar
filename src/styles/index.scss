@@ -19,7 +19,7 @@ body {
 }
 
 .calendar__day {
-  @include square($size, $color);
+  @include square($calendar, $color);
 
   position: relative;
 }
