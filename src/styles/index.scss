@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
-  gap: $gap;
+  padding: 10px;
   width: calc(
     ($calendar + $border) * $columns + $gap * ($columns - 1) + 2 * $padding
   );
@@ -20,6 +20,9 @@ body {
 
 .calendar__day {
   @include square($calendar, $color);
+
+  display: flex;
+  justify-content: center;
 
   position: relative;
 }
